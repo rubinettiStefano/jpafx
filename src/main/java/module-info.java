@@ -8,4 +8,5 @@ module com.generation.jpafx {
 	exports com.generation.jpafx;
 	exports com.generation.jpafx.model;
 	opens com.generation.jpafx.model to javafx.fxml, org.hibernate.orm.core;
+	opens com.generation.jpafx.controller to javafx.fxml, org.hibernate.orm.core;
 }

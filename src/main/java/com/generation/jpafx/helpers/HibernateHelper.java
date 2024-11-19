@@ -17,4 +17,6 @@ public class HibernateHelper
 		}
 		return entityManager;
 	}
+
+	private HibernateHelper(){}
 }
