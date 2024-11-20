@@ -1,5 +1,6 @@
 package com.generation.jpafx.helpers;
 
+import com.generation.jpafx.model.FileRepository;
 import com.generation.jpafx.model.User;
 import com.generation.jpafx.model.UserRepository;
 
@@ -17,6 +18,7 @@ public class ControllerHelper
 	//fine singleton
 	//prendo la repository
 	UserRepository repo = UserRepository.getInstance();
+	FileRepository fRepo = FileRepository.getInstance();
 
 
 	public String doRegister(String username, String password)
