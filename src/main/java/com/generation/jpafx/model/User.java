@@ -2,6 +2,8 @@ package com.generation.jpafx.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringJoiner;
 
 @Entity
@@ -16,6 +18,9 @@ public class User
 	private String username;
 	@Column(name = "password")
 	private String password;
+
+	@OneToMany(mappedBy = "user")
+	private List<File> files = new ArrayList<>();
 
 	public User(){}
 
@@ -53,6 +58,16 @@ public class User
 	public void setPassword(String password)
 	{
 		this.password = password;
+	}
+
+	public List<File> getFiles()
+	{
+		return files;
+	}
+
+	public void setFiles(List<File> files)
+	{
+		this.files = files;
 	}
 
 	@Override

@@ -3,7 +3,7 @@ package com.generation.jpafx.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "file", schema = "jpafx")
+@Table(name = "file")
 public class File
 {
 	@Id
@@ -14,9 +14,13 @@ public class File
 	@Column(name = "filename", length = 50)
 	private String filename;
 
-	@Lob
 	@Column(name = "content")
 	private String content;
+
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 
 	public Integer getId()
 	{
@@ -48,4 +52,13 @@ public class File
 		this.content = content;
 	}
 
+	public User getUser()
+	{
+		return user;
+	}
+
+	public void setUser(User user)
+	{
+		this.user = user;
+	}
 }
